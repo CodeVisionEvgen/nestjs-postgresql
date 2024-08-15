@@ -3,7 +3,6 @@ import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { PostgreSQLConfig } from '../configs/postgresql.config';
-import { ArticleModule } from './article/article.module';
 
 @Module({
   imports: [
@@ -15,7 +14,6 @@ import { ArticleModule } from './article/article.module';
       useFactory: PostgreSQLConfig,
       inject: [ConfigService],
     }),
-    ArticleModule,
   ],
 })
 export class AppModule {}
